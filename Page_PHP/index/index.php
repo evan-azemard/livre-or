@@ -11,7 +11,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<meta charset="utf-8"/>
 </head>
-<body>
+<body id="body_index">
 	<header>
 		<div id="header_connexion">
 			<div id="menu_connexion">
@@ -29,8 +29,8 @@
 				</div>
 				<div id="header_account">
 					<div class="header_centre_connexion">
-						<a href="#" class="header_text_mediaquerie">
-							Account
+						<a href="../inscription/inscription.php" class="header_text_mediaquerie">
+							Inscription
 						</a>
 					</div>
 				</div>

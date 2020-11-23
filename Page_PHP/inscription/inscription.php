@@ -1,3 +1,6 @@
+<?php  
+	include_once('donne.php'); 
+?>
 <!DOCTYPE html>
 <html lang="fr">  <!-- Page d'inscription -->
 <head>
@@ -7,11 +10,12 @@
 	<link rel="shortcut icon" href="https://banner2.kisspng.com/20180320/jpw/kisspng-iphone-5s-iphone-4s-iphone-6-iphone-8-plus-black-iphone-7-png-5ab187f21c6803.8974388315215841141164.jpg"/>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Flamenco&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Vidaloka&amp;display=swap" rel="stylesheet">
 	<meta name="description" content="Venez découvrir l'incroyable univers du smartphone!"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<meta charset="utf-8"/>
 </head>
-<body>
+<body id="body_inscription">
 <header>
 		<div id="header_connexion">
 			<div id="menu_connexion">
@@ -52,95 +56,80 @@
 					Ajouter un commentaire
 				</a>
 			</div>
+			<div class="boxe1">
+				<a href="../index/index.php">
+					Menu
+				</a>
+			</div>
 		</nav>
 	</header>
-<main id="m1s2">
-			<section class="s1p2">
-				<div class="div1form">
-					<div class="millieuform">
-						<p>Quelle année</p>
+	<main id="main_inscription">
+		<form action="donne.php" method="post">
+			<section id="section_form1">
+				<div class="divform">
+					<div class="title_form_section">
+						<p>Pseudo</p>
 					</div>
 				</div>
-				<div class="div2form">
-					<div class="millieuform">
-						<label for="Catégorie"></label>
-		  					<select name="nom" required="required" class="moisform" placeholder="Catégorie"size="1">
-		  						<option>2020</option>
-		  						<option>2021</option>
-		  						<option>2022</option>
-		  						<option>2023</option>
-		  						<option>2024</option>
-		  						<option>2025</option>
-		  						<option>2026</option>
-		  						<option>2027</option>
-		  						<option>2028</option>
-		  						<option>2029</option>
-		  						<option>2030</option>
-		  						<option>2031</option>
-		  					</select>
-					</div>
-				</div>
-				<div class="div3form">
-					<div class="millieuform">
-						<button>Soummettre</button>
+				<div class="divform">
+					<div class="title_form_section">
+						<input type="text" name="pseudo" placeholder="Pseudo" required="required" autocomplete="on">
 					</div>
 				</div>
 			</section>
-
-			<div id="tt">
-				<div id="traitt">
-					<p>Je suis invisible</p> <!-- Text invisible pour la ligne -->
+			<div class="trait">
+				<div class="line">
+					<p>invisible</p>
 				</div>
 			</div>
-			<section class="s1p2">
-				<div class="div1form">
-					<div class="millieuform">
-						<p>Nom de l'événement</p>
+			<section class="section_form">
+				<div class="divform">
+					<div class="title_form_section">
+						<p>Mot de passe</p>
 					</div>
 				</div>
-				<div class="div2form">
-					<div class="millieuform">
-						<label for="msgg" class="form-controltext"></label>
-	       				<textarea id="msgg" placeholder="Description" class="form-controltext" name="user_message">
-	       				</textarea>
-					</div>
-				</div>
-				<div class="div3form">
-					<div class="millieuform">
-						<button>Soummettre</button>
+				<div class="divform">
+					<div class="title_form_section">
+						<input type="password" name="password" placeholder="Mot de passe" required="required">
 					</div>
 				</div>
 			</section>
-			<div id="tt">
-				<div id="traitt">
-					<p>Je suis invisible</p> <!-- Text invisible pour la ligne -->
+			<div class="trait">
+				<div class="line">
+					<p>invisible</p>
 				</div>
 			</div>
-			<section class="s1p2">
-				<div class="div1form">
-					<div class="millieuform">
-						<p>Description de l'événement</p>
+			<section class="section_form">
+				<div class="divform">
+					<div class="title_form_section">
+						<p>Confirmer mot de passe</p>
 					</div>
 				</div>
-				<div class="div2form">
-					<div class="millieuform">
-						<label for="msgg" class="form-controltext"></label>
-	       				<textarea id="msgg" placeholder="Description" class="form-controltext" name="user_message">
-	       				</textarea>
-					</div>
-				</div>
-				<div class="div3form">
-					<div class="millieuform">
-						<button>Soummettre</button>
+				<div class="divform">
+					<div class="title_form_section">	
+						<input type="password" name="confirmer" placeholder="Confirmer mot de passe" required="required">
 					</div>
 				</div>
 			</section>
-			<div id="tt">
-				<div id="traitt">
-					<p>Je suis invisible</p> <!-- Text invisible pour la ligne -->
+			<div class="trait">
+				<div class="line">
+					<p>invisible</p>
 				</div>
 			</div>
-		</main>
+			<section class="section_form">
+				<div class="divform">
+					<div class="title_form_section">
+						<p>Valider et s'inscrire</p>
+					</div>
+				</div>
+				<div class="divform">
+					<div class="title_form_section">
+						<input type="submit" name="inscription" value="S'inscrire">
+					</div>
+				</div>
+			</section>
+		</form>
+	</main>
 	<footer>						<!-- FOOTER -->
 		<div id="container1_footer">
 			<div id="icone">		
