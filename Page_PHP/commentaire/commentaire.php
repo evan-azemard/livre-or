@@ -15,14 +15,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<meta charset="utf-8"/>
 </head>
-<body class="body_profil">
-<header id="header_profil">
+<body class="body_commentaire">
+<header id="header_commentaire">
 		<div id="header_connexion">
 			<div id="menu_connexion">
 				<div id="header_login">
 					<div class="header_centre_connexion">
-						<a href="#" class="header_text_mediaquerie">
-							Login
+						<a href="../profil/profil.php" class="header_text_mediaquerie">
+							Profil
 						</a>
 					</div>
 				</div>
@@ -33,8 +33,8 @@
 				</div>
 				<div id="header_account">
 					<div class="header_centre_connexion">
-						<a href="../inscription/inscription.php" class="header_text_mediaquerie">
-							Inscription
+						<a href="../index/index.php" class="header_text_mediaquerie">
+							Déconnexion
 						</a>
 					</div>
 				</div>
@@ -47,13 +47,8 @@
 		</div>
 		<nav id="header_nav">
 			<div class="boxe1">
-				<a href="#">
+				<a href="../livre_or/livre-or.php">
 					Livre d'or
-				</a>
-			</div>
-			<div class="boxe1">
-				<a href="#">
-					Ajouter un commentaire
 				</a>
 			</div>
 			<div class="boxe1">
@@ -63,53 +58,24 @@
 			</div>
 		</nav>
 	</header>
-	<main id="main_profil">
-		<div id="image_main_profil">
+	<main id="main_commentaire">
+		<div id="image_main_commentaire">
 			<form method="post">
-				<section id="section_form1_profil">
+				<section class="section_form_commentaire">
 					<div class="divform">
-						<div class="title_form_section">
-							<p>Nouveau pseudo</p>
+						<div class="title_form_section_commentaire">
+							<p>Ajouter un commentaire</p>
 						</div>
 					</div>
 					<div class="divform">
-						<div class="title_form_section">
-							<input type="text" name="pseudo" placeholder="Pseudo" required="required" autocomplete="on">
-						</div>
-					</div>
-				</section>
-				<div class="trait">
-					<div class="line">
-						<p>invisible</p>
-					</div>
-				</div>
-				</section>
-				<section class="section_form">
-					<div class="divform">
-						<div class="title_form_section">
-							<p>Nouveau mot de passe</p>
+						<div class="title_form_section_commentaire">
+							<textarea rows="4" cols="50" name="textarea" placeholder="Ajouter votre commentaire" required="required">
+							</textarea>
 						</div>
 					</div>
 					<div class="divform">
-						<div class="title_form_section">
-							<input type="password" name="password" placeholder="Nouveau mot de passe" required="required">
-						</div>
-					</div>
-				</section>
-				<div class="trait">
-					<div class="line">
-						<p>invisible</p>
-					</div>
-				</div>
-				<section class="section_form">
-					<div class="divform">
-						<div class="title_form_section">
-							<p>Modifier</p>
-						</div>
-					</div>
-					<div class="divform">
-						<div class="title_form_section">
-							<input type="submit" name="modifier" value="Modifier">
+						<div class="title_form_section_commentaire">
+							<input type="submit" name="ajouter" value="Ajouter">
 						</div>
 					</div>
 				</section>

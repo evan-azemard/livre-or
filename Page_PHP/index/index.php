@@ -43,18 +43,13 @@
 		</div>
 		<nav id="header_nav">
 			<div class="boxe1">
-				<a href="#">
+				<a href="../livre_or/livre-or.php">
 					Livre d'or
 				</a>
 			</div>
 			<div class="boxe1">
 				<a href="../profil/profil.php">
 					Profil
-				</a>
-			</div>
-			<div class="boxe1">
-				<a href="../commentaire/commentaire.php">
-					Ajouter un commentaire
 				</a>
 			</div>
 		</nav>

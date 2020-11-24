@@ -47,13 +47,8 @@
 		</div>
 		<nav id="header_nav">
 			<div class="boxe1">
-				<a href="#">
+				<a href="../livre_or/livre-or.php">
 					Livre d'or
-				</a>
-			</div>
-			<div class="boxe1">
-				<a href="#">
-					Ajouter un commentaire
 				</a>
 			</div>
 			<div class="boxe1">
