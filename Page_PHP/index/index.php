@@ -17,7 +17,7 @@
 			<div id="menu_connexion">
 				<div id="header_login">
 					<div class="header_centre_connexion">
-						<a href="#" class="header_text_mediaquerie">
+						<a href="../connexion/connexion.php" class="header_text_mediaquerie">
 							Login
 						</a>
 					</div>
@@ -48,7 +48,12 @@
 				</a>
 			</div>
 			<div class="boxe1">
-				<a href="#">
+				<a href="../profil/profil.php">
+					Profil
+				</a>
+			</div>
+			<div class="boxe1">
+				<a href="../commentaire/commentaire.php">
 					Ajouter un commentaire
 				</a>
 			</div>

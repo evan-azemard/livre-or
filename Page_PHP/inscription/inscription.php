@@ -21,7 +21,7 @@
 			<div id="menu_connexion">
 				<div id="header_login">
 					<div class="header_centre_connexion">
-						<a href="#" class="header_text_mediaquerie">
+						<a href="../connexion/connexion.php" class="header_text_mediaquerie">
 							Login
 						</a>
 					</div>
@@ -34,7 +34,7 @@
 				<div id="header_account">
 					<div class="header_centre_connexion">
 						<a href="#" class="header_text_mediaquerie">
-							Account
+							Inscription
 						</a>
 					</div>
 				</div>
@@ -64,7 +64,7 @@
 		</nav>
 	</header>
 	<main id="main_inscription">
-		<form action="donne.php" method="post">
+		<form action="../inscription/donne.php" method="post">
 			<section id="section_form1">
 				<div class="divform">
 					<div class="title_form_section">
