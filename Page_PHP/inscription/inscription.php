@@ -57,7 +57,7 @@
 		</nav>
 	</header>
 	<main id="main_inscription" >
-		<form method="post" echo var_dump($_POST);>
+		<form method="post" > 
 			<section id="section_form1">
 				<div class="divform">
 					<div class="title_form_section">
@@ -65,17 +65,14 @@
         				<input type="text" id="pseudo" name="pseudo" placeholder="Pseudo" required="required"><br>
         				<label for="name">Mot de passe :</label>
         				<input type="password" id="password" name="password" placeholder= "Mot de passe" required="required"><br>
-        				<label for="name">Répéter le mot de passe :</label>
+        				<label for="name">Confirmer le mot de passe :</label>
         				<input type="password" id="r_password" placeholder="Confirmer mot de passe" name="r_password" required="required"><br>
         				<label for="inscription">S'inscrire</label>
-s					</div>
-
+        				<input type="submit" name="inscription" value="S'inscrire">
+					</div>
 				</div>
-
 			</section>
-
 		</form>
-
 	</main>
 	<br>
 	<?php

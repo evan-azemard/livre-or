@@ -1,7 +1,4 @@
-<?php  
-	include_once('../inscription/donne.php');
-	if (!isset($_SESSION["id"])) { 	header('Location: ../connexion/connexion.php');}
-?>
+
 <!DOCTYPE html>
 <html lang="fr">  <!-- Page d'inscription -->
 <head>
@@ -26,7 +23,7 @@
 						<?php
 						if (!isset($_SESSION["id"])) { 	
 							echo "Login"; 
-						} else {
+						} else { 								
 							echo $_SESSION["username"];
 						}
 
@@ -86,6 +83,10 @@
 			</form>
 		</div>
 		<?php
+include("../inscription/donne.php");
+if (!isset($_SESSION["id"])) {  header('Location: ../connexion/connexion.php'); }
+
+
     foreach ($error as $erreure)
     {
     	echo "<center>";

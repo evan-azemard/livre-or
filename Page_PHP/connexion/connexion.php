@@ -1,6 +1,5 @@
 <?php  
 	if (isset($_SESSION["id"])) { 	header('Location: ../profil/profil.php');}
- 	include_once('../inscription/donne.php'); 
 ?>
 <!DOCTYPE html>
 <html lang="fr">  <!-- Page d'inscription -->
@@ -73,13 +72,14 @@
         				<input type="text" id="pseudo" name="pseudo" placeholder="Pseudo" required="required"><br>
         				<label for="name">Mot de passe :</label>
         				<input type="password" id="password" name="password" placeholder= "Mot de passe" required="required"><br>
-						<input type="submit" name="editprofile" value="S'inscrire">
+						<input type="submit" name="connexion" value="Se connecter">
 					</div>
 				</div>
 			</section>
 		</form>
 		<?php
 		if (isset($_GET["r"])) {	echo "<center>Inscription Terminée ! Merci de vous connecter !</center>";	}
+		include('../inscription/donne.php'); 
 		?>
 	</main>
 

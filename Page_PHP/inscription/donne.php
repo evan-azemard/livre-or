@@ -1,7 +1,6 @@
 <?php
 session_start();
-var_dump($_POST);
-    $error = array();
+$error = array();
 $bdd = new mysqli("localhost", "root", "", "livreor");
     if (!$bdd)
     {
@@ -58,7 +57,6 @@ if (isset($_POST["inscription"]))
     }
 
 }
-
 if (isset($_POST["connexion"])) {
 	$pseudo = $_POST["pseudo"];
     $password = $_POST["password"];
@@ -70,10 +68,11 @@ if (isset($_POST["connexion"])) {
     	$_SESSION["username"] = $row["login"];
     	header('Location: ../profil/profil.php');
 	}
+    echo "<center>Identifiants Invalides.</center>";
 }
 
 
-if (isset($_POST["n_pseudo"]) && isset($_SESSION["id"]) && $_POST["n_pseudo"] !== $_SESSION["username<"])
+if (isset($_POST["n_pseudo"]) && isset($_SESSION["id"]) && $_POST["n_pseudo"] !== $_SESSION["username"])
 {
 	$sql = 'UPDATE `utilisateurs` SET `login`= "' . $_POST["n_pseudo"] .'" WHERE `id` = "' . $_SESSION["id"] . '";';
 	
@@ -83,7 +82,7 @@ if (isset($_POST["n_pseudo"]) && isset($_SESSION["id"]) && $_POST["n_pseudo"] !=
 	if (count($error) < 1) 
 	{ 
 		$_SESSION["username"] = $_POST["n_pseudo"]; 
-		$_SESSION["response"] = "<center>Pseudo changé avec succès.</center>";
+		$_SESSION["resp:/onse"] = "<center>Pseudo changé avec succès.</center>";
 	}
 }
 
