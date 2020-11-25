@@ -1,6 +1,4 @@
-<?php  
-	include_once('donne.php'); 
-?>
+
 <!DOCTYPE html>
 <html lang="fr">  <!-- Page d'inscription -->
 <head>
@@ -58,73 +56,34 @@
 			</div>
 		</nav>
 	</header>
-	<main id="main_inscription">
-		<form action="../inscription/donne.php" method="post">
+	<main id="main_inscription" >
+		<form method="post" echo var_dump($_POST);>
 			<section id="section_form1">
 				<div class="divform">
 					<div class="title_form_section">
-						<p>Pseudo</p>
-					</div>
+ 						<label for="name">Pseudo :</label>
+        				<input type="text" id="pseudo" name="pseudo" placeholder="Pseudo" required="required"><br>
+        				<label for="name">Mot de passe :</label>
+        				<input type="password" id="password" name="password" placeholder= "Mot de passe" required="required"><br>
+        				<label for="name">Répéter le mot de passe :</label>
+        				<input type="password" id="r_password" placeholder="Confirmer mot de passe" name="r_password" required="required"><br>
+        				<label for="inscription">S'inscrire</label>
+s					</div>
+
 				</div>
-				<div class="divform">
-					<div class="title_form_section">
-						<input type="text" name="pseudo" placeholder="Pseudo" required="required" autocomplete="on">
-					</div>
-				</div>
+
 			</section>
-			<div class="trait">
-				<div class="line">
-					<p>invisible</p>
-				</div>
-			</div>
-			<section class="section_form">
-				<div class="divform">
-					<div class="title_form_section">
-						<p>Mot de passe</p>
-					</div>
-				</div>
-				<div class="divform">
-					<div class="title_form_section">
-						<input type="password" name="password" placeholder="Mot de passe" required="required">
-					</div>
-				</div>
-			</section>
-			<div class="trait">
-				<div class="line">
-					<p>invisible</p>
-				</div>
-			</div>
-			<section class="section_form">
-				<div class="divform">
-					<div class="title_form_section">
-						<p>Confirmer mot de passe</p>
-					</div>
-				</div>
-				<div class="divform">
-					<div class="title_form_section">	
-						<input type="password" name="confirmer" placeholder="Confirmer mot de passe" required="required">
-					</div>
-				</div>
-			</section>
-			<div class="trait">
-				<div class="line">
-					<p>invisible</p>
-				</div>
-			</div>
-			<section class="section_form">
-				<div class="divform">
-					<div class="title_form_section">
-						<p>Valider et s'inscrire</p>
-					</div>
-				</div>
-				<div class="divform">
-					<div class="title_form_section">
-						<input type="submit" name="inscription" value="S'inscrire">
-					</div>
-				</div>
-			</section>
+
 		</form>
+
 	</main>
+	<br>
+	<?php
+		echo "<br><center>";
+		include('donne.php');
+		echo "</center>";
+	?>	
+	
 	<footer>						<!-- FOOTER -->
 		<div id="container1_footer">
 			<div id="icone">		

@@ -1,5 +1,6 @@
 <?php  
-	include_once('../inscription/donne.php'); 
+	include_once('../inscription/donne.php');
+	if (!isset($_SESSION["id"])) { 	header('Location: ../connexion/connexion.php');}
 ?>
 <!DOCTYPE html>
 <html lang="fr">  <!-- Page d'inscription -->
@@ -22,7 +23,15 @@
 				<div id="header_login">
 					<div class="header_centre_connexion">
 						<a href="#" class="header_text_mediaquerie">
-							Login
+						<?php
+						if (!isset($_SESSION["id"])) { 	
+							echo "Login"; 
+						} else {
+							echo $_SESSION["username"];
+						}
+
+						?>
+							
 						</a>
 					</div>
 				</div>
@@ -34,7 +43,9 @@
 				<div id="header_account">
 					<div class="header_centre_connexion">
 						<a href="../inscription/inscription.php" class="header_text_mediaquerie">
-							Inscription
+							<?php
+							if (!isset($_SESSION["id"])) { 	echo "inscription"; }
+							?>
 						</a>
 					</div>
 				</div>
@@ -64,52 +75,29 @@
 				<section id="section_form1_profil">
 					<div class="divform">
 						<div class="title_form_section">
-							<p>Nouveau pseudo</p>
-						</div>
-					</div>
-					<div class="divform">
-						<div class="title_form_section">
-							<input type="text" name="pseudo" placeholder="Pseudo" required="required" autocomplete="on">
-						</div>
-					</div>
-				</section>
-				<div class="trait">
-					<div class="line">
-						<p>invisible</p>
-					</div>
-				</div>
-				</section>
-				<section class="section_form">
-					<div class="divform">
-						<div class="title_form_section">
-							<p>Nouveau mot de passe</p>
-						</div>
-					</div>
-					<div class="divform">
-						<div class="title_form_section">
-							<input type="password" name="password" placeholder="Nouveau mot de passe" required="required">
-						</div>
-					</div>
-				</section>
-				<div class="trait">
-					<div class="line">
-						<p>invisible</p>
-					</div>
-				</div>
-				<section class="section_form">
-					<div class="divform">
-						<div class="title_form_section">
-							<p>Modifier</p>
-						</div>
-					</div>
-					<div class="divform">
-						<div class="title_form_section">
-							<input type="submit" name="modifier" value="Modifier">
+						<label for="name">Nouveau Pseudo :</label>
+        				<input type="text" id="n_pseudo" name="n_pseudo" value="<?php echo $_SESSION["username"]; ?>" placeholder="Pseudo" ><br>
+        				<label for="name">Mot de passe :</label>
+        				<input type="password" id="n_password" name="password" placeholder= "Mot de passe" ><br>
+						<input type="submit" id="editprofile" value="Valider">
 						</div>
 					</div>
 				</section>
 			</form>
 		</div>
+		<?php
+    foreach ($error as $erreure)
+    {
+    	echo "<center>";
+        echo "• " . $erreure . "<br>";
+    	echo "</center>";
+    }
+    
+    if (isset($_SESSION["response"])) {
+    	echo $_SESSION["response"];
+    	unset($_SESSION['response']);
+    } 
+	?>
 	</main>
 	<footer id="profil_footer">						<!-- FOOTER -->
 		<div id="container1_footer">

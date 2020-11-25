@@ -1,6 +1,4 @@
-<?php  
-	include_once('../inscription/donne.php'); 
-?>
+
 <!DOCTYPE html>
 <html lang="fr">  <!-- Page d'inscription -->
 <head>
