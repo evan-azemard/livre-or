@@ -67,7 +67,7 @@
 		<form method="post">
 			<section id="section_form1">
 				<div class="divform">
-					<div class="title_form_section">
+					<div class="title_form_section marg">
 						<label for="name">Pseudo :</label>
         				<input type="text" id="pseudo" name="pseudo" placeholder="Pseudo" required="required"><br>
         				<label for="name">Mot de passe :</label>

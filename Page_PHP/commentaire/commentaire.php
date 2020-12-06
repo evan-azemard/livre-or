@@ -1,4 +1,4 @@
-
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr">  <!-- Page d'inscription -->
 <head>
@@ -67,8 +67,7 @@
 					</div>
 					<div class="divform">
 						<div class="title_form_section_commentaire">
-							<textarea rows="4" cols="50" name="textarea" placeholder="Ajouter votre commentaire" required="required">
-							</textarea>
+							<textarea rows="4" cols="50" name="textarea" placeholder="Ajouter votre commentaire" required="required"></textarea>
 						</div>
 					</div>
 					<div class="divform">

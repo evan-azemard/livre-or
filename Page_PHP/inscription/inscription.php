@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">  <!-- Page d'inscription -->
 <head>
@@ -80,7 +79,6 @@
 		include('donne.php');
 		echo "</center>";
 	?>	
-	
 	<footer>						<!-- FOOTER -->
 		<div id="container1_footer">
 			<div id="icone">		

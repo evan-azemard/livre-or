@@ -27,8 +27,7 @@
 							echo $_SESSION["username"];
 						}
 
-						?>
-							
+						?>	
 						</a>
 					</div>
 				</div>
@@ -70,19 +69,19 @@
 		<div id="image_main_profil">
 			<form method="post">
 				<section id="section_form1_profil">
-					<div class="divform">
+					<div class="divform1">
 						<div class="title_form_section">
 						<label for="name">Nouveau Pseudo :</label>
-        				<input type="text" id="n_pseudo" name="n_pseudo" value="<?php echo $_SESSION["username"]; ?>" placeholder="Pseudo" ><br>
+        				<input type="text" id="n_pseudo" name="n_pseudo"><br>
         				<label for="name">Mot de passe :</label>
-        				<input type="password" id="n_password" name="password" placeholder= "Mot de passe" ><br>
+        				<input type="password" id="n_password" name="n_password" placeholder= "Mot de passe" ><br>
 						<input type="submit" id="editprofile" value="Valider">
 						</div>
 					</div>
 				</section>
 			</form>
 		</div>
-		<?php
+		<?php	
 include("../inscription/donne.php");
 if (!isset($_SESSION["id"])) {  header('Location: ../connexion/connexion.php'); }
 
@@ -93,11 +92,6 @@ if (!isset($_SESSION["id"])) {  header('Location: ../connexion/connexion.php'); 
         echo "• " . $erreure . "<br>";
     	echo "</center>";
     }
-    
-    if (isset($_SESSION["response"])) {
-    	echo $_SESSION["response"];
-    	unset($_SESSION['response']);
-    } 
 	?>
 	</main>
 	<footer id="profil_footer">						<!-- FOOTER -->
@@ -134,3 +128,5 @@ if (!isset($_SESSION["id"])) {  header('Location: ../connexion/connexion.php'); 
 	</footer>
 </body>
 </html>
+
+       

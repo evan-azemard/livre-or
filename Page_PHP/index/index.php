@@ -57,9 +57,9 @@
 	<main>
 		<div id="nav_nav">
 			<ul>
-				<li><a class="active" href="ide1.html">LG G4</a></li>
-			    <li><a href="ide3.html">LG G8</a></li> <!-- si j'ai le temps -->
-			    <li><a href="ide3.html">LG Wing</a></li> <!-- si j'ai le temps -->
+				<li><a class="active" href="#">LG G4</a></li>
+			    <li><a href="#">LG G8</a></li> <!-- si j'ai le temps -->
+			    <li><a href="#">LG Wing</a></li> <!-- si j'ai le temps -->
 			</ul>
 		</div>
 		<div id="main_contenue">
