@@ -1,6 +1,19 @@
-<?php session_start(); ?>
+<?php
+session_start();
+$bdd = new mysqli("localhost", "root", "", "livreor");
+
+if (isset($_POST["textarea"]) and isset($_POST["Ajouter"])) {
+    $time = date('Y-m-d H:i:s');
+    $textarea = $_POST["textarea"]; 
+    $sql = 'INSERT INTO `commentaires`(`commentaire`, `id_utilisateur`, `date`) VALUES ( "' . $textarea .'","' . $_SESSION["id"] . '","' . $time . '")';
+            mysqli_query($bdd, $sql);
+session_destroy();
+
+header('Location: ../livre_or/livre-or.php');
+}      
+?>
 <!DOCTYPE html>
-<html lang="fr">  <!-- Page d'inscription -->
+<html lang="fr">  <!-- Commentaires -->
 <head>
 	<title>Le monde du smartphone</title>
 	<script src="https://use.fontawesome.com/d3028f0b61.js"></script>
@@ -72,7 +85,7 @@
 					</div>
 					<div class="divform">
 						<div class="title_form_section_commentaire">
-							<input type="submit" name="ajouter" value="Ajouter">
+							<input type="submit" name="Ajouter" value="Ajouter">
 						</div>
 					</div>
 				</section>

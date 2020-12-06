@@ -1,5 +1,7 @@
 <?php  
-	include_once('../inscription/donne.php'); 
+session_start();  
+$bdd = new mysqli("localhost", "root", "", "livreor");
+$sql = " SELECT commentaire, login, date FROM commentaires INNER JOIN utilisateurs ON utilisateurs.id = commentaires.id_utilisateur ";
 ?>
 <!DOCTYPE html>
 <html lang="fr">  <!-- Page d'inscription -->
@@ -21,8 +23,19 @@
 			<div id="menu_connexion">
 				<div id="header_login">
 					<div class="header_centre_connexion">
-						<a href="../connexion/connexion.php" class="header_text_mediaquerie">
-							Login
+						<a href="#" class="header_text_mediaquerie">
+								<?php
+							if (!isset($_SESSION["id"])) { 	
+								echo '<a href="../connexion/connexion.php">';
+								echo "Login"; 
+								echo "</a>";
+							} 
+
+							else { 								
+								echo $_SESSION["username"];
+							}
+
+							?>	
 						</a>
 					</div>
 				</div>
@@ -33,8 +46,19 @@
 				</div>
 				<div id="header_account">
 					<div class="header_centre_connexion">
-						<a href="../inscription/inscription.php" class="header_text_mediaquerie">
-							Inscription
+						<?php
+						if (!isset($_SESSION["id"])) {
+							echo '<a href="../inscription/inscription.php" class="header_text_mediaquerie">';
+							echo 'Inscription';
+							echo '</a'; 
+						}
+						else {
+							echo '<a href="../index/index.php" class="header_text_mediaquerie">';
+							echo 'Déconnexion';
+							echo '</a'; 
+						}
+						
+						?>
 						</a>
 					</div>
 				</div>
@@ -52,9 +76,16 @@
 				</a>
 			</div>
 			<div class="boxe1">
-				<a href="../commentaire/commentaire.php">
-					Ajouter un commentaire
-				</a>
+							<?php
+						if (!isset($_SESSION["id"])) { 	
+							echo "";
+						} 
+						else { 								
+							echo '<a href="../commentaire/commentaire.php">';
+							echo 'Ajouter un commentaire';
+						   	echo '</a>';
+						}
+						?>
 			</div>
 			<div class="boxe1">
 				<a href="../profil/profil.php">
@@ -69,11 +100,37 @@
 		</nav>
 	</header>
 	<main id="main_livre">
-		<div class="div1livre">
-			<div class="ecrire">
-				<p>Exmple de commentaire</p>
-			</div>
-		</div>
+				<?php
+  			   	    $bdd = new mysqli("localhost", "root", "", "livreor");
+					$sql = " SELECT commentaire, login, date FROM commentaires INNER JOIN utilisateurs ON utilisateurs.id = commentaires.id_utilisateur ";
+
+ 					if (isset($_SESSION["username"])){
+
+						$result = mysqli_query ($bdd,$sql);
+
+  						while ($rows = mysqli_fetch_assoc($result)){
+  						echo '<div class="div1livre">';
+						echo '<div class="ecrire">';
+						echo '<p>';
+		                echo 'publié par :';
+		                echo $rows['login'] . "";
+		                echo '<br/> <br/><br/>';
+		                echo $rows['commentaire'];
+		                echo '<br/>';
+						echo '<br/>';
+		                echo 'le ';
+		                echo substr($rows['date'],8,2);
+		                echo '-';
+		                echo substr($rows['date'],5,2);
+		                echo '-';
+		                echo substr($rows['date'],0,4);
+		                echo '<br/>';
+		                echo '</p>';
+		                echo '</div>';
+		                echo '</div>';
+		                } 
+		            }
+             	 ?>
 		<div class="div1livre">
 			<div class="ecrire">
 				<p>Exmple de commentaire</p>

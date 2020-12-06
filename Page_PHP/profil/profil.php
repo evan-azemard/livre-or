@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="fr">  <!-- Page d'inscription -->
+<html lang="fr">  <!-- Page de profil -->
 <head>
 	<title>Le monde du smartphone</title>
 	<script src="https://use.fontawesome.com/d3028f0b61.js"></script>
@@ -22,8 +22,9 @@
 						<a href="#" class="header_text_mediaquerie">
 						<?php
 						if (!isset($_SESSION["id"])) { 	
-							echo "Login"; 
-						} else { 								
+							echo ""; 
+						} 
+						else { 								
 							echo $_SESSION["username"];
 						}
 
@@ -38,10 +39,8 @@
 				</div>
 				<div id="header_account">
 					<div class="header_centre_connexion">
-						<a href="../inscription/inscription.php" class="header_text_mediaquerie">
-							<?php
-							if (!isset($_SESSION["id"])) { 	echo "inscription"; }
-							?>
+						<a href="../index/index.php" class="header_text_mediaquerie">
+							Déconnexion
 						</a>
 					</div>
 				</div>
@@ -72,9 +71,9 @@
 					<div class="divform1">
 						<div class="title_form_section">
 						<label for="name">Nouveau Pseudo :</label>
-        				<input type="text" id="n_pseudo" name="n_pseudo"><br>
+        				<input type="text" id="n_pseudo" name="n_pseudo" placeholder="Entrer nouveau pseudo"><br>
         				<label for="name">Mot de passe :</label>
-        				<input type="password" id="n_password" name="n_password" placeholder= "Mot de passe" ><br>
+        				<input type="password" id="n_password" name="n_password" placeholder= "Entrer nouveau mot de passe"><br>
 						<input type="submit" id="editprofile" value="Valider">
 						</div>
 					</div>
@@ -85,14 +84,13 @@
 include("../inscription/donne.php");
 if (!isset($_SESSION["id"])) {  header('Location: ../connexion/connexion.php'); }
 
-
     foreach ($error as $erreure)
     {
     	echo "<center>";
         echo "• " . $erreure . "<br>";
     	echo "</center>";
     }
-	?>
+?>
 	</main>
 	<footer id="profil_footer">						<!-- FOOTER -->
 		<div id="container1_footer">
@@ -128,5 +126,3 @@ if (!isset($_SESSION["id"])) {  header('Location: ../connexion/connexion.php'); 
 	</footer>
 </body>
 </html>
-
-       

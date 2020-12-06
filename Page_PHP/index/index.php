@@ -1,3 +1,6 @@
+<?php
+session_start();  
+?>
 <!DOCTYPE html>
 <html lang="fr">			<!--Page d'accueil-->
 <head>
@@ -17,8 +20,17 @@
 			<div id="menu_connexion">
 				<div id="header_login">
 					<div class="header_centre_connexion">
-						<a href="../connexion/connexion.php" class="header_text_mediaquerie">
-							Login
+						<?php
+						if (!isset($_SESSION["id"])) { 	
+							echo '<a href="../inscription/inscription>';
+							echo "Login"; 
+							echo '</a>';
+						} 
+						else { 								
+							echo $_SESSION["username"];
+						}
+
+						?>	
 						</a>
 					</div>
 				</div>
