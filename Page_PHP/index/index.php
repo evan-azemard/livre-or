@@ -22,10 +22,8 @@ session_start();
 					<div class="header_centre_connexion">
 						<?php
 						if (!isset($_SESSION["id"])) { 	
-							echo '<a href="../inscription/inscription>';
 							echo "Login"; 
-							echo '</a>';
-						} 
+							} 
 						else { 								
 							echo $_SESSION["username"];
 						}

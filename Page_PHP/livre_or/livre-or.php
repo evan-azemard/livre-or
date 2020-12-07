@@ -1,7 +1,5 @@
 <?php  
 session_start();  
-$bdd = new mysqli("localhost", "root", "", "livreor");
-$sql = " SELECT commentaire, login, date FROM commentaires INNER JOIN utilisateurs ON utilisateurs.id = commentaires.id_utilisateur ";
 ?>
 <!DOCTYPE html>
 <html lang="fr">  <!-- Page d'inscription -->
@@ -108,6 +106,12 @@ $sql = " SELECT commentaire, login, date FROM commentaires INNER JOIN utilisateu
 
 						$result = mysqli_query ($bdd,$sql);
 
+						// Test pour trier par ordres.
+						// foreach ($result as $results)
+						// 	{
+						// 		sort($results);
+						// 	}
+
   						while ($rows = mysqli_fetch_assoc($result)){
   						echo '<div class="div1livre">';
 						echo '<div class="ecrire">';
@@ -116,7 +120,7 @@ $sql = " SELECT commentaire, login, date FROM commentaires INNER JOIN utilisateu
 		                echo $rows['login'] . "";
 		                echo '<br/> <br/><br/>';
 		                echo $rows['commentaire'];
-		                echo '<br/>';
+		                echo '<br/><br/>';
 						echo '<br/>';
 		                echo 'le ';
 		                echo substr($rows['date'],8,2);
