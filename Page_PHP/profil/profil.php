@@ -23,13 +23,13 @@ session_start();
 					<div class="header_centre_connexion">
 						<a href="#" class="header_text_mediaquerie">
 						<?php
-						if (!isset($_SESSION["id"])) { 	
-							echo ""; 
-						header('Location: ../connexion/connexion.php?');
-						} 
-						else { 								
-							echo $_SESSION["username"];
-						}
+							if (!isset($_SESSION["id"])) { 	
+								echo ""; 
+							header('Location: ../connexion/connexion.php?');
+							} 
+								else { 								
+									echo $_SESSION["username"];
+								}
 
 						?>	
 						</a>
@@ -43,17 +43,17 @@ session_start();
 				<div id="header_account">
 					<div class="header_centre_connexion">
 						<?php
-						if (!isset($_SESSION["id"])) { 	
-							echo ""; 
-							header('Location: ../connexion/connexion.php?');
-						} 
-						else{
-							echo '<form method="post"> <input type="submit" name="Déconnexion" value="Déconnexion"> </form>';
-						        if(isset($_POST["Déconnexion"])){
-         						 session_unset();
-         						 header('location: ../index/index.php');
-     						}
-						}
+							if (!isset($_SESSION["id"])) { 	
+								echo ""; 
+								header('Location: ../connexion/connexion.php?');
+							} 
+							else{
+								echo '<form method="post"> <input type="submit" name="Déconnexion" value="Déconnexion"> </form>';
+						     	   if(isset($_POST["Déconnexion"])){
+         							 session_unset();
+         							 header('location: ../index/index.php');
+     							}
+							}
 						?>
 					</div>
 				</div>
@@ -75,6 +75,18 @@ session_start();
 					Menu
 				</a>
 			</div>
+				<?php
+					if (!isset($_SESSION)){
+						echo '';
+					}
+					else{
+						echo '<div class="boxe1>';
+						echo '<a href="../commentaire/commentaire.php"';
+						echo 'Ajouter un commentaire';
+						echo '</a>';
+						echo '</div>';
+					}
+				?>
 		</nav>
 	</header>
 	<main id="main_profil">

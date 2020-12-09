@@ -35,17 +35,17 @@ header('Location: ../livre_or/livre-or.php');
 				<div id="header_login">
 					<div class="header_centre_connexion">
 							<?php
-							if (!isset($_SESSION["id"])) { 	
-								echo '<a href="../connexion/connexion.php">';
-								echo "Login"; 
-								echo "</a>";
-							} 
+								if (!isset($_SESSION["id"])) { 	
+									echo '<a href="../connexion/connexion.php">';
+									echo "Login"; 
+									echo "</a>";
+								} 
 
-							else { 
-								echo '<a href="../profil/profil.php" class="header_text_mediaquerie"  >';					
-								echo $_SESSION["username"];
-								echo '</a>';
-							}
+								else { 
+									echo '<a href="../profil/profil.php" class="header_text_mediaquerie"  >';					
+									echo $_SESSION["username"];
+									echo '</a>';
+								}
 							?>	
 					</div>
 				</div>
@@ -57,20 +57,20 @@ header('Location: ../livre_or/livre-or.php');
 				<div id="header_account">
 					<div class="header_centre_connexion">
 						<?php
-						if (!isset($_SESSION["id"])) {
-							echo '<a href="../inscription/inscription.php" class="header_text_mediaquerie">';
-							echo 'Inscription';
-							echo '</a>'; 
-						}
-						else {
-							echo '<a href="../index/index.php" class="header_text_mediaquerie">';
-							echo '<form method="post"> <input type="submit" name="Déconnexion" value="Déconnexion"> </form>';
-							echo "</a>";
-						        if(isset($_POST["Déconnexion"])){
-         						 session_unset();
-         						 header('location: ../index/index.php');
-     						}
-						}
+							if (!isset($_SESSION["id"])) {
+								echo '<a href="../inscription/inscription.php" class="header_text_mediaquerie">';
+								echo 'Inscription';
+								echo '</a>'; 
+							}
+							else {
+								echo '<a href="../index/index.php" class="header_text_mediaquerie">';
+								echo '<form method="post"> <input type="submit" name="Déconnexion" value="Déconnexion"> </form>';
+								echo "</a>";
+							        if(isset($_POST["Déconnexion"])){
+	         						 session_unset();
+	         						 header('location: ../index/index.php');
+     							}
+							}
 						?>
 					</div>
 				</div>
@@ -86,6 +86,18 @@ header('Location: ../livre_or/livre-or.php');
 				<a href="../livre_or/livre-or.php">
 					Livre d'or
 				</a>
+			</div>
+			<div class="boxe1">
+				<?php
+					if (!isset($_SESSION["id"])) {
+						echo "";
+					}
+				else {
+					echo '<a href="../profil/profil.php>"';
+					echo 'Profil';
+					echo '</a>';
+					}
+				?>
 			</div>
 			<div class="boxe1">
 				<a href="../index/index.php">

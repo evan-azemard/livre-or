@@ -20,7 +20,7 @@ session_start();
 			<div id="menu_connexion">
 				<div id="header_login">
 					<div class="header_centre_connexion">
-								<?php
+						<?php
 							if (!isset($_SESSION["id"])) { 	
 								echo '<a href="../connexion/connexion.php">';
 								echo "Login"; 
@@ -32,7 +32,7 @@ session_start();
 								echo $_SESSION["username"];
 								echo '</a>';
 							}
-							?>	
+						?>	
 					</div>
 				</div>
 				<div id="header_trait_connexion">
@@ -43,21 +43,21 @@ session_start();
 				<div id="header_account">
 					<div class="header_centre_connexion">
 						<?php
-						if (!isset($_SESSION["id"])) {
-							echo '<a href="../inscription/inscription.php" class="header_text_mediaquerie">';
-							echo 'Inscription';
-							echo '</a>'; 
-						}
-						else {
-							echo '<a href="../index/index.php" class="header_text_mediaquerie">';
-							echo '<form method="post"> <input type="submit" name="Déconnexion" value="Déconnexion"> </form>';
-							echo "</a>";
-						        if(isset($_POST["Déconnexion"])){
-         						 session_unset();
-         						 header('location: ../index/index.php');
-     						}
-						}
-						?>
+							if (!isset($_SESSION["id"])) {
+								echo '<a href="../inscription/inscription.php" class="header_text_mediaquerie">';
+								echo 'Inscription';
+								echo '</a>'; 
+							}
+								else {
+									echo '<a href="../index/index.php" class="header_text_mediaquerie">';
+									echo '<form method="post"> <input type="submit" name="Déconnexion" value="Déconnexion"> </form>';
+									echo "</a>";
+						       		 if(isset($_POST["Déconnexion"])){
+		         						 session_unset();
+		         						 header('location: ../index/index.php');
+     								}
+								}
+							?>
 						</a>
 					</div>
 				</div>
@@ -74,11 +74,32 @@ session_start();
 					Livre d'or
 				</a>
 			</div>
-			<div class="boxe1">
-				<a href="../profil/profil.php">
-					Profil
-				</a>
+				<div class="boxe1">
+					<?php
+						if (!isset($_SESSION["id"])) { 	
+							echo "";
+						} 
+							else { 								
+								echo '<a href="../commentaire/commentaire.php">';
+								echo 'Ajouter un commentaire';
+						   		echo '</a>';
+							}
+						?>
+				</div>
+				<div class="boxe1">
+					<?php
+						if (!isset($_SESSION["id"])) { 	
+							echo ""; 
+						} 
+							else { 
+								echo '<a href="../profil/profil.php" class="header_text_mediaquerie"  >';					
+								echo "Profil";
+								echo '</a>';
+							}
+					?>
+				</div>
 			</div>
+			
 		</nav>
 	</header>
 	<main>

@@ -52,9 +52,18 @@
 				</a>
 			</div>
 			<div class="boxe1">
-				<a href="../profil/profil.php">
-					Profil
-				</a>
+				<?php
+					if (!isset($_SESSION["id"])) 
+					{ 	
+						echo ""; 
+					} 
+
+					else { 
+						echo '<a href="../profil/profil.php" class="header_text_mediaquerie"  >';					
+						echo "Profil";
+						echo '</a>';
+						}
+				?>
 			</div>
 			<div class="boxe1">
 				<a href="../index/index.php">
