@@ -1,5 +1,5 @@
 <?php  
-	if (isset($_SESSION["id"])) { 	header('Location: ../profil/profil.php');}
+	if (isset($_SESSION["id"])) { 	header('Location: ../index/index.php');}
 ?>
 <!DOCTYPE html>
 <html lang="fr">  <!-- Page d'inscription -->

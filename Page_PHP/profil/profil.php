@@ -1,4 +1,6 @@
-
+<?php
+session_start();  
+?>
 <!DOCTYPE html>
 <html lang="fr">  <!-- Page de profil -->
 <head>
@@ -23,6 +25,7 @@
 						<?php
 						if (!isset($_SESSION["id"])) { 	
 							echo ""; 
+						header('Location: ../connexion/connexion.php?');
 						} 
 						else { 								
 							echo $_SESSION["username"];
@@ -39,9 +42,19 @@
 				</div>
 				<div id="header_account">
 					<div class="header_centre_connexion">
-						<a href="../index/index.php" class="header_text_mediaquerie">
-							Déconnexion
-						</a>
+						<?php
+						if (!isset($_SESSION["id"])) { 	
+							echo ""; 
+							header('Location: ../connexion/connexion.php?');
+						} 
+						else{
+							echo '<form method="post"> <input type="submit" name="Déconnexion" value="Déconnexion"> </form>';
+						        if(isset($_POST["Déconnexion"])){
+         						 session_unset();
+         						 header('location: ../index/index.php');
+     						}
+						}
+						?>
 					</div>
 				</div>
 			</div>
@@ -71,10 +84,10 @@
 					<div class="divform1">
 						<div class="title_form_section">
 						<label for="name">Nouveau Pseudo :</label>
-        				<input type="text" id="n_pseudo" name="n_pseudo" placeholder="Entrer nouveau pseudo"><br>
+        				<input type="text" id="n_pseudo" name="n_pseudo" placeholder="        Nouveau pseudo"><br>
         				<label for="name">Mot de passe :</label>
-        				<input type="password" id="n_password" name="n_password" placeholder= "Entrer nouveau mot de passe"><br>
-						<input type="submit" id="editprofile" value="Valider">
+        				<input type="password" id="n_password" name="n_password" placeholder= "  Nouveaux mot de passe"><br>
+						<input type="submit" id="editprofile" value="Valider">  
 						</div>
 					</div>
 				</section>

@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (!isset($_SESSION["id"])) { 	
+	header('Location: ../connexion/connexion.php');
+	}
 $bdd = new mysqli("localhost", "root", "", "livreor");
 
 if (isset($_POST["textarea"]) and isset($_POST["Ajouter"])) {
@@ -31,9 +34,19 @@ header('Location: ../livre_or/livre-or.php');
 			<div id="menu_connexion">
 				<div id="header_login">
 					<div class="header_centre_connexion">
-						<a href="../profil/profil.php" class="header_text_mediaquerie">
-							Profil
-						</a>
+							<?php
+							if (!isset($_SESSION["id"])) { 	
+								echo '<a href="../connexion/connexion.php">';
+								echo "Login"; 
+								echo "</a>";
+							} 
+
+							else { 
+								echo '<a href="../profil/profil.php" class="header_text_mediaquerie"  >';					
+								echo $_SESSION["username"];
+								echo '</a>';
+							}
+							?>	
 					</div>
 				</div>
 				<div id="header_trait_connexion">
@@ -43,9 +56,22 @@ header('Location: ../livre_or/livre-or.php');
 				</div>
 				<div id="header_account">
 					<div class="header_centre_connexion">
-						<a href="../index/index.php" class="header_text_mediaquerie">
-							Déconnexion
-						</a>
+						<?php
+						if (!isset($_SESSION["id"])) {
+							echo '<a href="../inscription/inscription.php" class="header_text_mediaquerie">';
+							echo 'Inscription';
+							echo '</a>'; 
+						}
+						else {
+							echo '<a href="../index/index.php" class="header_text_mediaquerie">';
+							echo '<form method="post"> <input type="submit" name="Déconnexion" value="Déconnexion"> </form>';
+							echo "</a>";
+						        if(isset($_POST["Déconnexion"])){
+         						 session_unset();
+         						 header('location: ../index/index.php');
+     						}
+						}
+						?>
 					</div>
 				</div>
 			</div>

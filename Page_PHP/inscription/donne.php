@@ -54,7 +54,7 @@ if (isset($_POST["inscription"]))      //Pour le formulaire d'inscription...
     {
     $sql = 'INSERT INTO `utilisateurs`(`login`, `password`) VALUES ("' . $pseudo .'","' . $password . '")';
     $res = mysqli_query($bdd, $sql);
-	header('Location: ../connexion/connexion.php?r');
+	header('Location: ../connexion/connexion.php?');
     }
 
 }
@@ -107,8 +107,8 @@ else {
 
     echo " <center> modification réussi </center>";
 
-        if(isset($_POST["deconnexion"])){
-          session_destroy() ;
+        if(isset($_POST["Déconnexion"])){
+          session_unset();
           header('location: ../index/index.php');
 
         }

@@ -29,10 +29,11 @@ session_start();
 								echo "</a>";
 							} 
 
-							else { 								
+							else { 
+								echo '<a href="../profil/profil.php" class="header_text_mediaquerie"  >';					
 								echo $_SESSION["username"];
+								echo '</a>';
 							}
-
 							?>	
 						</a>
 					</div>
@@ -48,14 +49,15 @@ session_start();
 						if (!isset($_SESSION["id"])) {
 							echo '<a href="../inscription/inscription.php" class="header_text_mediaquerie">';
 							echo 'Inscription';
-							echo '</a'; 
+							echo '</a>'; 
 						}
-						else {
-							echo '<a href="../index/index.php" class="header_text_mediaquerie">';
-							echo 'Déconnexion';
-							echo '</a'; 
+						else{
+							echo '<form method="post"> <input type="submit" name="Déconnexion" value="Déconnexion"> </form>';
+						        if(isset($_POST["Déconnexion"])){
+         						 session_unset();
+         						 header('location: ../index/index.php');
+     						}
 						}
-						
 						?>
 						</a>
 					</div>
