@@ -7,7 +7,6 @@ if (isset($_POST["textarea"]) and isset($_POST["Ajouter"])) {
     $textarea = $_POST["textarea"]; 
     $sql = 'INSERT INTO `commentaires`(`commentaire`, `id_utilisateur`, `date`) VALUES ( "' . $textarea .'","' . $_SESSION["id"] . '","' . $time . '")';
             mysqli_query($bdd, $sql);
-session_destroy();
 
 header('Location: ../livre_or/livre-or.php');
 }      
